@@ -1,0 +1,66 @@
+export default function MusicAppUI() {
+  const songs = [
+    { title: 'Midnight Drive', artist: 'Nova Beats' },
+    { title: 'Dream Waves', artist: 'Luna Sky' },
+    { title: 'Neon Lights', artist: 'Aria Vibes' },
+    { title: 'City Rhythm', artist: 'Echo Pulse' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-zinc-800 text-white p-6">
+      <div className="max-w-md mx-auto">
+        <div className="flex items-center justify-between mb-8">
+          <h1 className="text-3xl font-bold">🎵 Music App</h1>
+          <button className="bg-zinc-700 px-4 py-2 rounded-xl hover:bg-zinc-600 transition">
+            Profile
+          </button>
+        </div>
+
+        <div className="bg-zinc-900 rounded-3xl shadow-2xl p-5 mb-6 border border-zinc-700">
+          <img
+            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1000&auto=format&fit=crop"
+            alt="album"
+            className="w-full h-64 object-cover rounded-2xl mb-5"
+          />
+
+          <h2 className="text-2xl font-semibold">Night Vibes</h2>
+          <p className="text-zinc-400 mb-5">Nova Beats</p>
+
+          <div className="w-full bg-zinc-700 h-2 rounded-full mb-4">
+            <div className="bg-green-400 h-2 w-1/2 rounded-full"></div>
+          </div>
+
+          <div className="flex items-center justify-center gap-6 text-2xl">
+            <button className="hover:scale-110 transition">⏮️</button>
+            <button className="bg-green-500 text-black px-5 py-3 rounded-full text-3xl hover:scale-110 transition">
+              ▶️
+            </button>
+            <button className="hover:scale-110 transition">⏭️</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Playlist</h3>
+
+          <div className="space-y-3">
+            {songs.map((song, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-between bg-zinc-900 p-4 rounded-2xl border border-zinc-700 hover:bg-zinc-800 transition"
+              >
+                <div>
+                  <h4 className="font-medium">{song.title}</h4>
+                  <p className="text-sm text-zinc-400">{song.artist}</p>
+                </div>
+
+                <button className="bg-green-500 text-black px-4 py-2 rounded-xl hover:bg-green-400 transition">
+                  Play
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
